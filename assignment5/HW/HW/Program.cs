@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using Org.BouncyCastle.Asn1.Mozilla;
+using System.ComponentModel;
 
 
 
@@ -10,17 +11,7 @@ namespace HW
     {
         static void Main(string[] args)
         {
-            /*using (var context = new SchoolContext())
-            {
-                var studentsOver18 = from s in context.Students
-                                     where s.Age > 18
-                                     select s;
-
-                foreach (var student in studentsOver18)
-                {
-                    Console.WriteLine($"Id: {student.Id}, Name: {student.Name}, Age: {student.Age}");
-                }
-            }*/
+            List<Order> orders = new List<Order>();
         }
     }
 
@@ -30,7 +21,7 @@ namespace HW
         public List<Product> ProductInf { get; set; }//商品
         public Client ClientInf { get; set; }//客户
         public double Amount { get; set; }//金额
-        List<OrderDetails> Details { get; set; }//订单明细
+        public List<OrderDetails> Details { get; set; }//订单明细
 
         //无参数的构造函数
         public Order()
@@ -222,7 +213,9 @@ namespace HW
 
     public class OrderService
     {
-        List<Order> orders = new List<Order>();//存储所有订单的列表
+        BindingList<Order> orders = new BindingList<Order>();//存储所有订单的列表
+        public OrderService(BindingList<Order> orders)
+            { this.orders = orders; }
 
         //添加订单
         public bool AddOrder(Order order)
