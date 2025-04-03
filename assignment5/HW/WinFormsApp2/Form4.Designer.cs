@@ -174,6 +174,7 @@
             button1.TabIndex = 0;
             button1.Text = "搜索";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // splitContainer2
             // 
@@ -390,6 +391,7 @@
             button2.TabIndex = 0;
             button2.Text = "删除订单";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // Form4
             // 

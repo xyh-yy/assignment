@@ -244,15 +244,15 @@ namespace HW
         }
 
         //修改订单
-        public bool ModifyOrder(Order order)
+        public bool ModifyOrder(Order old_order,Order new_order)
         {
             //查找订单是否存在
             foreach( var item in orders)
             {
-                if (item.Equals(order))
+                if (item.Equals(old_order))
                 {
                     orders.Remove(item);
-                    orders.Add(order);
+                    orders.Add(new_order);
                     return true;
                 }
             }
@@ -261,7 +261,7 @@ namespace HW
         }
 
         //通过订单号查询订单
-        public bool QueryNum(int num)
+        public bool QueryNum(int num,Order result)
         {
             //查询订单号
             var NumberList = from item in orders
@@ -273,10 +273,13 @@ namespace HW
                 Console.WriteLine($"不存在订单号为{num}的订单！");
                 return false;
             }
+
+            result = NumberList.FirstOrDefault();
             //按订单金额进行排序
-            var sortedNumberList = NumberList.OrderBy(n=>n.Amount);
-            foreach( var item in sortedNumberList)
-                item.ToString();
+            /*var sortedNumberList = NumberList.OrderBy(n=>n.Amount);*/
+            /*foreach( var item in sortedNumberList)
+                item.ToString();*/
+            
             return true;
         }
 

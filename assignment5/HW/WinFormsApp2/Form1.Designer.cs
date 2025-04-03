@@ -122,6 +122,7 @@
             // splitContainer3.Panel2
             // 
             splitContainer3.Panel2.Controls.Add(button1);
+            splitContainer3.Panel2.Paint += splitContainer3_Panel2_Paint;
             splitContainer3.Size = new Size(779, 72);
             splitContainer3.SplitterDistance = 359;
             splitContainer3.TabIndex = 0;
@@ -177,21 +178,21 @@
             // 添加订单ToolStripMenuItem
             // 
             添加订单ToolStripMenuItem.Name = "添加订单ToolStripMenuItem";
-            添加订单ToolStripMenuItem.Size = new Size(152, 26);
+            添加订单ToolStripMenuItem.Size = new Size(224, 26);
             添加订单ToolStripMenuItem.Text = "添加订单";
             添加订单ToolStripMenuItem.Click += 添加订单ToolStripMenuItem_Click;
             // 
             // 修改订单ToolStripMenuItem
             // 
             修改订单ToolStripMenuItem.Name = "修改订单ToolStripMenuItem";
-            修改订单ToolStripMenuItem.Size = new Size(152, 26);
+            修改订单ToolStripMenuItem.Size = new Size(224, 26);
             修改订单ToolStripMenuItem.Text = "修改订单";
             修改订单ToolStripMenuItem.Click += 修改订单ToolStripMenuItem_Click;
             // 
             // 删除订单ToolStripMenuItem
             // 
             删除订单ToolStripMenuItem.Name = "删除订单ToolStripMenuItem";
-            删除订单ToolStripMenuItem.Size = new Size(152, 26);
+            删除订单ToolStripMenuItem.Size = new Size(224, 26);
             删除订单ToolStripMenuItem.Text = "删除订单";
             删除订单ToolStripMenuItem.Click += 删除订单ToolStripMenuItem_Click;
             // 
@@ -199,32 +200,36 @@
             // 
             查询订单ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { 订单号ToolStripMenuItem, 客户ToolStripMenuItem, 商品ToolStripMenuItem, 总金额ToolStripMenuItem });
             查询订单ToolStripMenuItem.Name = "查询订单ToolStripMenuItem";
-            查询订单ToolStripMenuItem.Size = new Size(152, 26);
+            查询订单ToolStripMenuItem.Size = new Size(224, 26);
             查询订单ToolStripMenuItem.Text = "查询订单";
             // 
             // 订单号ToolStripMenuItem
             // 
             订单号ToolStripMenuItem.Name = "订单号ToolStripMenuItem";
-            订单号ToolStripMenuItem.Size = new Size(137, 26);
+            订单号ToolStripMenuItem.Size = new Size(224, 26);
             订单号ToolStripMenuItem.Text = "订单号";
+            订单号ToolStripMenuItem.Click += 订单号ToolStripMenuItem_Click;
             // 
             // 客户ToolStripMenuItem
             // 
             客户ToolStripMenuItem.Name = "客户ToolStripMenuItem";
-            客户ToolStripMenuItem.Size = new Size(137, 26);
+            客户ToolStripMenuItem.Size = new Size(224, 26);
             客户ToolStripMenuItem.Text = "客户";
+            客户ToolStripMenuItem.Click += 客户ToolStripMenuItem_Click;
             // 
             // 商品ToolStripMenuItem
             // 
             商品ToolStripMenuItem.Name = "商品ToolStripMenuItem";
-            商品ToolStripMenuItem.Size = new Size(137, 26);
+            商品ToolStripMenuItem.Size = new Size(224, 26);
             商品ToolStripMenuItem.Text = "商品";
+            商品ToolStripMenuItem.Click += 商品ToolStripMenuItem_Click;
             // 
             // 总金额ToolStripMenuItem
             // 
             总金额ToolStripMenuItem.Name = "总金额ToolStripMenuItem";
-            总金额ToolStripMenuItem.Size = new Size(137, 26);
+            总金额ToolStripMenuItem.Size = new Size(224, 26);
             总金额ToolStripMenuItem.Text = "总金额";
+            总金额ToolStripMenuItem.Click += 总金额ToolStripMenuItem_Click;
             // 
             // textBox1
             // 
@@ -243,6 +248,7 @@
             button1.TabIndex = 1;
             button1.Text = "搜索";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // splitContainer2
             // 
